@@ -2138,6 +2138,14 @@
         }
       });
     });
+
+   // Replace with your actual Web App URL
+  var appUrl = 'https://script.google.com/macros/s/AKfycbxUKZBX-NcrBK4UsTrdSnNuwwjiEETpNk5UX7tgdtAzoFXo7BqV2gIIh5Ok29hwp-gV/exec';
+  fetch(appUrl + '?page=trackHome')
+    .then(response => response.json())
+    .then(data => console.log('Visit tracked'))
+    .catch(err => console.log('Tracking failed', err));
+
   </script>
 </body>
 </html>
