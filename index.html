@@ -102,6 +102,72 @@
       min-height: 100vh;
     }
 
+    /* Google Business Verification Badge - TOP RIGHT CORNER */
+    .google-badge {
+      position: fixed;
+      top: 90px;
+      right: 20px;
+      z-index: 10000;
+      background: var(--bg-card);
+      border: 2px solid var(--accent);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 20px var(--accent-glow);
+      animation: badgePulse 3s infinite;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      max-width: 180px;
+    }
+
+    .google-badge:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), 0 0 30px var(--accent-glow);
+      border-color: var(--accent-bright);
+    }
+
+    .google-badge img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--radius-sm);
+    }
+
+    .google-badge-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .google-badge-text i {
+      color: #10b981;
+      font-size: 0.9rem;
+    }
+
+    @keyframes badgePulse {
+      0%, 100% { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 20px var(--accent-glow); }
+      50% { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 40px var(--accent-glow); }
+    }
+
+    @media (max-width: 768px) {
+      .google-badge {
+        top: auto;
+        bottom: 20px;
+        right: 10px;
+        max-width: 140px;
+        padding: 8px;
+      }
+      .google-badge-text {
+        font-size: 0.65rem;
+      }
+    }
+
     /* Atmospheric Background */
     .atmosphere {
       position: fixed;
@@ -1495,6 +1561,13 @@
         max-width: 280px;
         justify-content: center;
       }
+      
+      .scroll-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+      }
     }
 
     /* Reduced Motion */
@@ -1517,6 +1590,15 @@
   </style>
 </head>
 <body>
+  <!-- Google Business Verification Badge - Fixed Top Right -->
+  <a href="https://g.co/kgs/tukaram-consultancy" target="_blank" rel="noopener" class="google-badge" title="Google Verified Business">
+    <img src="https://drive.google.com/thumbnail?id=19wCkP7z7OIjdiPALx43ISc88pDIk_Ezl&sz=w400" alt="Google Business Verified">
+    <div class="google-badge-text">
+      <i class="fas fa-check-circle"></i>
+      <span>Verified Business</span>
+    </div>
+  </a>
+
   <div class="atmosphere"></div>
   <div class="noise-overlay"></div>
 
@@ -1564,7 +1646,6 @@
       <div class="header-content">
         <div class="logo-section">
           <img src="https://drive.google.com/uc?id=1PAUX1sZCHrciisU6LOkYGjeDtgwyYkTg" alt="Tukaram Consultancy Logo" class="logo" onerror="this.style.display='none'">
-          <img src="https://drive.google.com/thumbnail?id=19wCkP7z7OIjdiPALx43ISc88pDIk_Ezl&sz=w300" alt="Google Verified" style="height: 40px; margin-left: 15px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
           <div class="logo-text">
             <h1>TUKARAM CONSULTANCY</h1>
             <p>Your Compliance Partner</p>
@@ -2150,4 +2231,3 @@
   </script>
 </body>
 </html>
-
