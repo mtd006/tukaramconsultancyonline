@@ -2,10 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-676562526"> </script>
-<script>  window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);}  gtag('js', new Date());
-  gtag('config', 'AW-676562526'); </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -32,6 +28,36 @@
   
   <link rel="icon" type="image/png" href="https://drive.google.com/uc?id=1PAUX1sZCHrciisU6LOkYGjeDtgwyYkTg">
   <link rel="canonical" href="https://mtd006.github.io/tukaramconsultancyonline/">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-676562526"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-676562526', {
+      'send_page_view': true
+    });
+  </script>
+
+  <!-- Google Tab Visibility Tracking -->
+  <script>
+    document.addEventListener('visibilitychange', function() {
+      if (document.visibilityState === 'visible') {
+        gtag('event', 'tab_visible', {
+          'event_category': 'engagement',
+          'event_label': 'Tab Focus',
+          'value': 1
+        });
+      } else {
+        gtag('event', 'tab_hidden', {
+          'event_category': 'engagement',
+          'event_label': 'Tab Blur',
+          'value': 0
+        });
+      }
+    });
+  </script>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -106,7 +132,6 @@
       min-height: 100vh;
     }
 
-    /* Google Business Verification Badge - TOP RIGHT CORNER */
     .google-badge {
       position: fixed;
       top: 90px;
@@ -172,7 +197,6 @@
       }
     }
 
-    /* Atmospheric Background */
     .atmosphere {
       position: fixed;
       inset: 0;
@@ -210,7 +234,6 @@
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     }
 
-    /* Typography */
     h1, h2, h3, h4 {
       font-family: var(--font-display);
       font-weight: 700;
@@ -234,7 +257,6 @@
       transition: var(--transition-fast);
     }
 
-    /* Utility Classes */
     .container {
       max-width: 1280px;
       margin: 0 auto;
@@ -277,7 +299,6 @@
       font-size: 1.1rem;
     }
 
-    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -346,7 +367,6 @@
 
     .btn i { font-size: 1.1em; }
 
-    /* Scroll Reveal Animation */
     .reveal {
       opacity: 0;
       transform: translateY(40px);
@@ -376,7 +396,6 @@
       transform: translateY(0);
     }
 
-    /* Portal Banner */
     .portal-banner {
       position: fixed;
       top: 0;
@@ -457,7 +476,6 @@
 
     body { padding-top: 70px; }
 
-    /* Header */
     .header {
       position: fixed;
       top: 70px;
@@ -567,7 +585,6 @@
       padding: 8px;
     }
 
-    /* Hero Section */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -622,7 +639,7 @@
     @keyframes blobFloat {
       0%, 100% { transform: translate(0, 0) scale(1); }
       33% { transform: translate(30px, -30px) scale(1.05); }
-      66% { transform: translate(-20px, 20px) scale(0.95); }
+      66% { transform: translate(-20px, 20px scale(0.95); }
     }
 
     .hero-content {
@@ -713,7 +730,6 @@
       box-shadow: var(--shadow-lg), 0 0 60px var(--accent-glow);
     }
 
-    /* Stats Bar */
     .stats-bar {
       position: absolute;
       bottom: 0;
@@ -747,7 +763,6 @@
       margin: 0;
     }
 
-    /* Resource Buttons */
     .resource-buttons {
       background: var(--bg-elevated);
       padding: 30px 0;
@@ -787,7 +802,6 @@
     .resource-btn.ppt:hover { border-color: #f97316; color: #f97316; }
     .resource-btn.video:hover { border-color: #ef4444; color: #ef4444; }
 
-    /* Services Section */
     .services {
       background: var(--bg);
       position: relative;
@@ -942,7 +956,6 @@
       gap: 4px;
     }
 
-    /* Process Section */
     .process {
       background: var(--bg-elevated);
       position: relative;
@@ -1020,7 +1033,6 @@
       margin: 0;
     }
 
-    /* Brand Promise */
     .brand-promise {
       background: var(--bg);
       position: relative;
@@ -1109,7 +1121,6 @@
       border: 1px solid var(--border);
     }
 
-    /* Credentials */
     .credentials {
       background: var(--bg-elevated);
     }
@@ -1176,7 +1187,6 @@
       border-color: var(--accent);
     }
 
-    /* FAQ */
     .faq {
       background: var(--bg);
     }
@@ -1248,7 +1258,6 @@
       font-size: 0.95rem;
     }
 
-    /* Contact */
     .contact {
       background: var(--bg-elevated);
     }
@@ -1305,7 +1314,6 @@
       color: var(--accent);
     }
 
-    /* Footer */
     .footer {
       background: var(--bg);
       border-top: 1px solid var(--border);
@@ -1386,7 +1394,6 @@
       margin: 0.25rem 0;
     }
 
-    /* Scroll to Top */
     .scroll-top {
       position: fixed;
       bottom: 30px;
@@ -1419,7 +1426,6 @@
       box-shadow: 0 8px 32px var(--accent-glow);
     }
 
-    /* Responsive */
     @media (max-width: 1024px) {
       .hero-content,
       .brand-content,
@@ -1574,7 +1580,6 @@
       }
     }
 
-    /* Reduced Motion */
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -1585,7 +1590,6 @@
       }
     }
 
-    /* Focus Styles */
     a:focus-visible,
     button:focus-visible {
       outline: 2px solid var(--accent);
@@ -1594,7 +1598,6 @@
   </style>
 </head>
 <body>
-  <!-- Google Business Verification Badge - Fixed Top Right -->
   <a href="https://g.co/kgs/tukaram-consultancy" target="_blank" rel="noopener" class="google-badge" title="Google Verified Business">
     <img src="https://drive.google.com/thumbnail?id=19wCkP7z7OIjdiPALx43ISc88pDIk_Ezl&sz=w400" alt="Google Business Verified">
     <div class="google-badge-text">
@@ -1606,7 +1609,6 @@
   <div class="atmosphere"></div>
   <div class="noise-overlay"></div>
 
-  <!-- Portal Banner -->
   <div class="portal-banner">
     <div class="container">
       <div class="banner-content">
@@ -1624,7 +1626,6 @@
     </div>
   </div>
 
-  <!-- Resource Buttons -->
   <section class="resource-buttons">
     <div class="container">
       <div class="resource-grid reveal-stagger">
@@ -1644,7 +1645,6 @@
     </div>
   </section>
 
-  <!-- Header -->
   <header class="header" id="header">
     <div class="container">
       <div class="header-content">
@@ -1672,7 +1672,6 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-bg">
       <div class="hero-blob hero-blob-1"></div>
@@ -1729,7 +1728,6 @@
     </div>
   </section>
 
-  <!-- Services Section -->
   <section class="services section" id="services">
     <div class="container">
       <div class="section-title reveal">
@@ -1740,7 +1738,6 @@
     </div>
   </section>
 
-  <!-- Process Section -->
   <section class="process section" id="process">
     <div class="container">
       <div class="section-title reveal">
@@ -1780,7 +1777,6 @@
     </div>
   </section>
 
-  <!-- Brand Promise Section -->
   <section class="brand-promise section" id="about">
     <div class="container">
       <div class="brand-content">
@@ -1818,7 +1814,6 @@
     </div>
   </section>
 
-  <!-- Credentials Section -->
   <section class="credentials section">
     <div class="container">
       <div class="section-title reveal">
@@ -1867,7 +1862,6 @@
     </div>
   </section>
 
-  <!-- FAQ Section -->
   <section class="faq section" id="faq">
     <div class="container">
       <div class="section-title reveal">
@@ -1878,7 +1872,6 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section class="contact section" id="contact">
     <div class="container">
       <div class="section-title reveal">
@@ -1944,7 +1937,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -2068,6 +2060,7 @@
       initScrollReveal();
       initMobileMenu();
       initScrollEffects();
+      initPageViewTracking();
     });
 
     // Load Services
@@ -2091,12 +2084,22 @@
             </div>
           </div>
           <div class="service-actions">
-            <button class="btn btn-primary" onclick="window.open('https://script.google.com/macros/s/AKfycbxUKZBX-NcrBK4UsTrdSnNuwwjiEETpNk5UX7tgdtAzoFXo7BqV2gIIh5Ok29hwp-gV/exec', '_blank')">
+            <button class="btn btn-primary" onclick="handleServiceClick('${s.code}', '${s.name}')">
               <i class="fas fa-shopping-cart"></i> Get Quote
             </button>
           </div>
         </div>
       `).join('');
+    }
+
+    // Handle service button clicks with tracking
+    function handleServiceClick(code, name) {
+      gtag('event', 'service_click', {
+        'event_category': 'engagement',
+        'event_label': name,
+        'service_code': code
+      });
+      window.open('https://script.google.com/macros/s/AKfycbxUKZBX-NcrBK4UsTrdSnNuwwjiEETpNk5UX7tgdtAzoFXo7BqV2gIIh5Ok29hwp-gV/exec', '_blank');
     }
 
     // Load FAQ
@@ -2133,6 +2136,12 @@
       if (!isActive) {
         item.classList.add('active');
         answer.style.maxHeight = answer.scrollHeight + 'px';
+        
+        // Track FAQ interaction
+        gtag('event', 'faq_expand', {
+          'event_category': 'engagement',
+          'event_label': btn.querySelector('h4').textContent
+        });
       }
     }
 
@@ -2214,6 +2223,23 @@
       }
     }
 
+    // Page view tracking with session handling
+    function initPageViewTracking() {
+      // Track initial page view
+      gtag('event', 'page_view', {
+        'page_title': document.title,
+        'page_location': window.location.href,
+        'page_path': window.location.pathname
+      });
+
+      // Track via backend
+      var appUrl = 'https://script.google.com/macros/s/AKfycbxUKZBX-NcrBK4UsTrdSnNuwwjiEETpNk5UX7tgdtAzoFXo7BqV2gIIh5Ok29hwp-gV/exec';
+      fetch(appUrl + '?page=trackHome')
+        .then(response => response.json())
+        .then(data => console.log('Visit tracked'))
+        .catch(err => console.log('Tracking failed', err));
+    }
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -2225,13 +2251,17 @@
       });
     });
 
-   // Replace with your actual Web App URL
-  var appUrl = 'https://script.google.com/macros/s/AKfycbxUKZBX-NcrBK4UsTrdSnNuwwjiEETpNk5UX7tgdtAzoFXo7BqV2gIIh5Ok29hwp-gV/exec';
-  fetch(appUrl + '?page=trackHome')
-    .then(response => response.json())
-    .then(data => console.log('Visit tracked'))
-    .catch(err => console.log('Tracking failed', err));
-
-    </script>
+    // Track outbound clicks
+    document.querySelectorAll('a[href^="http"]').forEach(link => {
+      link.addEventListener('click', function() {
+        const href = this.getAttribute('href');
+        gtag('event', 'click', {
+          'event_category': 'outbound',
+          'event_label': href,
+          'transport_type': 'beacon'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
