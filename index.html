@@ -4,9 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
   <meta name="google-site-verification" content="3v3i89d6kYFdk-Z8mYyFDaJwGjaSBpclxHCAvgn81nc" />
   
+  <!-- ========== GOOGLE TAG (gtag.js) – PLACED FIRST ========== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-676562526"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-676562526');
+  </script>
+  <!-- ========== END GOOGLE TAG ========== -->
+
   <title>Tukaram Consultancy - Your Compliance Partner | Expert Online Legal Solutions</title>
   <meta name="title" content="Tukaram Consultancy - Your Compliance Partner | Expert Online Legal Solutions">
   <meta name="description" content="Leading legal consultancy providing expert online solutions for housing societies, corporate legal consulting, and redevelopment projects.">
@@ -28,10 +37,8 @@
   
   <link rel="icon" type="image/png" href="https://drive.google.com/uc?id=1PAUX1sZCHrciisU6LOkYGjeDtgwyYkTg">
   <link rel="canonical" href="https://mtd006.github.io/tukaramconsultancyonline/">
-  
 
-
-  <!-- Google Tab Visibility Tracking -->
+  <!-- Google Tab Visibility Tracking – now placed after gtag.js -->
   <script>
     document.addEventListener('visibilitychange', function() {
       if (document.visibilityState === 'visible') {
@@ -1587,20 +1594,10 @@
       outline-offset: 3px;
     }
   </style>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-676562526">
-  </script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'AW-676562526');
-  </script>
   <!-- Google tag (gtag.js) event - delayed navigation helper -->
   <script>
     // Helper function to delay opening a URL until a gtag event is sent.
-    // Call it in response to an action that should navigate to a URL.
     function gtagSendEvent(url) {
       var callback = function () {
         if (typeof url === 'string') {
@@ -1610,29 +1607,18 @@
       gtag('event', 'ads_conversion_Add_to_cart_1', {
         'event_callback': callback,
         'event_timeout': 2000,
-        // <event_parameters>
       });
       return false;
     }
   </script>
-  <!-- Google tag (gtag.js) event -->
+
+  <!-- These event snippets should normally fire after config, but they will be queued -->
   <script>
-    gtag('event', 'ads_conversion_Add_to_cart_1', {
-      // <event_parameters>
-    });
+    gtag('event', 'ads_conversion_Add_to_cart_1', {});
+    gtag('event', 'ads_conversion_Begin_checkout_1', {});
+    gtag('event', 'ads_conversion_Purchase_1', {});
   </script>
-  <!-- Google tag (gtag.js) event -->
-  <script>
-    gtag('event', 'ads_conversion_Begin_checkout_1', {
-      // <event_parameters>
-    });
-  </script>
-  <!-- Google tag (gtag.js) event -->
-  <script>
-    gtag('event', 'ads_conversion_Purchase_1', {
-      // <event_parameters>
-    });
-  </script>
+
 </head>
 <body>
   <a href="https://g.co/kgs/tukaram-consultancy" target="_blank" rel="noopener" class="google-badge" title="Google Verified Business">
