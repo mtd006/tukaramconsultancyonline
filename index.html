@@ -16,6 +16,26 @@
   </script>
   <!-- ========== END GOOGLE TAG ========== -->
 
+  <!-- ========== CONVERSION DELAYED NAVIGATION HELPER (gtag_report_conversion) ========== -->
+  <script>
+    // Google Ads conversion tracking with delayed navigation.
+    // Call this function when a user clicks on a conversion link/button.
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof url === 'string' && url) {
+          window.location = url;
+        }
+      };
+      gtag('event', 'ads_conversion_Add_to_cart_1', {
+        'event_callback': callback,
+        'event_timeout': 2000,
+        // optional event parameters can be added here
+      });
+      return false; // prevent immediate navigation until event is sent
+    }
+  </script>
+  <!-- ========== END CONVERSION HELPER ========== -->
+
   <title>Tukaram Consultancy - Your Compliance Partner | Expert Online Legal Solutions</title>
   <meta name="title" content="Tukaram Consultancy - Your Compliance Partner | Expert Online Legal Solutions">
   <meta name="description" content="Leading legal consultancy providing expert online solutions for housing societies, corporate legal consulting, and redevelopment projects.">
@@ -38,7 +58,7 @@
   <link rel="icon" type="image/png" href="https://drive.google.com/uc?id=1PAUX1sZCHrciisU6LOkYGjeDtgwyYkTg">
   <link rel="canonical" href="https://mtd006.github.io/tukaramconsultancyonline/">
 
-  <!-- Google Tab Visibility Tracking – now placed after gtag.js -->
+  <!-- Google Tab Visibility Tracking (optional engagement) -->
   <script>
     document.addEventListener('visibilitychange', function() {
       if (document.visibilityState === 'visible') {
@@ -637,7 +657,7 @@
     @keyframes blobFloat {
       0%, 100% { transform: translate(0, 0) scale(1); }
       33% { transform: translate(30px, -30px) scale(1.05); }
-      66% { transform: translate(-20px, 20px scale(0.95); }
+      66% { transform: translate(-20px, 20px) scale(0.95); }
     }
 
     .hero-content {
@@ -1594,31 +1614,6 @@
       outline-offset: 3px;
     }
   </style>
-
-  <!-- Google tag (gtag.js) event - delayed navigation helper -->
-  <script>
-    // Helper function to delay opening a URL until a gtag event is sent.
-    function gtagSendEvent(url) {
-      var callback = function () {
-        if (typeof url === 'string') {
-          window.location = url;
-        }
-      };
-      gtag('event', 'ads_conversion_Add_to_cart_1', {
-        'event_callback': callback,
-        'event_timeout': 2000,
-      });
-      return false;
-    }
-  </script>
-
-  <!-- These event snippets should normally fire after config, but they will be queued -->
-  <script>
-    gtag('event', 'ads_conversion_Add_to_cart_1', {});
-    gtag('event', 'ads_conversion_Begin_checkout_1', {});
-    gtag('event', 'ads_conversion_Purchase_1', {});
-  </script>
-
 </head>
 <body>
   <a href="https://g.co/kgs/tukaram-consultancy" target="_blank" rel="noopener" class="google-badge" title="Google Verified Business">
@@ -1640,7 +1635,7 @@
           <span>Start Your Legal Journey Online</span>
           <i class="fas fa-star star"></i>
         </div>
-        <a href="https://script.google.com/macros/s/AKfycbxUKZBX-NcrBK4UsTrdSnNuwwjiEETpNk5UX7tgdtAzoFXo7BqV2gIIh5Ok29hwp-gV/exec" class="banner-cta" target="_blank" rel="noopener">
+        <a href="https://script.google.com/macros/s/AKfycbxUKZBX-NcrBK4UsTrdSnNuwwjiEETpNk5UX7tgdtAzoFXo7BqV2gIIh5Ok29hwp-gV/exec" class="banner-cta" onclick="return gtag_report_conversion(this.href)" target="_blank" rel="noopener">
           <i class="fas fa-sign-in-alt"></i>
           <span>Register & Login to Portal</span>
           <i class="fas fa-arrow-right arrow"></i>
@@ -1708,7 +1703,7 @@
           <p class="hero-motto">"To the People for the People"</p>
           <p>Providing comprehensive online legal solutions with integrated compliance management. Our multi-disciplinary approach combines legal expertise with business acumen, financial intelligence, and cutting-edge AI solutions.</p>
           <div class="hero-cta">
-            <a href="https://script.google.com/macros/s/AKfycbxUKZBX-NcrBK4UsTrdSnNuwwjiEETpNk5UX7tgdtAzoFXo7BqV2gIIh5Ok29hwp-gV/exec" class="btn btn-portal" target="_blank" rel="noopener">
+            <a href="https://script.google.com/macros/s/AKfycbxUKZBX-NcrBK4UsTrdSnNuwwjiEETpNk5UX7tgdtAzoFXo7BqV2gIIh5Ok29hwp-gV/exec" class="btn btn-portal" onclick="return gtag_report_conversion(this.href)" target="_blank" rel="noopener">
               <i class="fas fa-sign-in-alt"></i>
               Online Portal - Register & Login
             </a>
@@ -2076,21 +2071,10 @@
       }
     ];
 
-    // Initialize
-    document.addEventListener('DOMContentLoaded', function() {
-      loadServices();
-      loadFAQ();
-      initScrollReveal();
-      initMobileMenu();
-      initScrollEffects();
-      initPageViewTracking();
-    });
-
-    // Load Services
+    // Helper to load services
     function loadServices() {
       const grid = document.getElementById('servicesGrid');
       if (!grid) return;
-      
       grid.innerHTML = servicesData.map(s => `
         <div class="service-card">
           ${s.premium ? '<span class="premium-badge"><i class="fas fa-crown"></i> Premium</span>' : ''}
@@ -2107,7 +2091,7 @@
             </div>
           </div>
           <div class="service-actions">
-            <button class="btn btn-primary" onclick="handleServiceClick('${s.code}', '${s.name}')">
+            <button class="btn btn-primary" onclick="handleServiceClick('${s.code}', '${s.name.replace(/'/g, "\\'")}', this)">
               <i class="fas fa-shopping-cart"></i> Get Quote
             </button>
           </div>
@@ -2115,21 +2099,23 @@
       `).join('');
     }
 
-    // Handle service button clicks with tracking
-    function handleServiceClick(code, name) {
+    // Handle service click with conversion tracking
+    function handleServiceClick(code, name, btnElement) {
+      // Track detailed service engagement event
       gtag('event', 'service_click', {
         'event_category': 'engagement',
         'event_label': name,
         'service_code': code
       });
-      window.open('https://script.google.com/macros/s/AKfycbxUKZBX-NcrBK4UsTrdSnNuwwjiEETpNk5UX7tgdtAzoFXo7BqV2gIIh5Ok29hwp-gV/exec', '_blank');
+      // Trigger conversion and redirect to portal after event
+      const portalUrl = 'https://script.google.com/macros/s/AKfycbxUKZBX-NcrBK4UsTrdSnNuwwjiEETpNk5UX7tgdtAzoFXo7BqV2gIIh5Ok29hwp-gV/exec';
+      gtag_report_conversion(portalUrl);
     }
 
-    // Load FAQ
+    // Load FAQ accordion
     function loadFAQ() {
       const container = document.getElementById('faqContainer');
       if (!container) return;
-      
       container.innerHTML = faqData.map((item, i) => `
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFAQ(this)">
@@ -2145,22 +2131,17 @@
       `).join('');
     }
 
-    // Toggle FAQ
     function toggleFAQ(btn) {
       const item = btn.parentElement;
       const answer = item.querySelector('.faq-answer');
       const isActive = item.classList.contains('active');
-      
       document.querySelectorAll('.faq-item').forEach(i => {
         i.classList.remove('active');
-        i.querySelector('.faq-answer').style.maxHeight = null;
+        if (i.querySelector('.faq-answer')) i.querySelector('.faq-answer').style.maxHeight = null;
       });
-      
       if (!isActive) {
         item.classList.add('active');
         answer.style.maxHeight = answer.scrollHeight + 'px';
-        
-        // Track FAQ interaction
         gtag('event', 'faq_expand', {
           'event_category': 'engagement',
           'event_label': btn.querySelector('h4').textContent
@@ -2168,26 +2149,20 @@
       }
     }
 
-    // Scroll Reveal
+    // Scroll reveal observer
     function initScrollReveal() {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
+          if (entry.isIntersecting) entry.target.classList.add('visible');
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-      document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
-        observer.observe(el);
-      });
+      document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
     }
 
-    // Mobile Menu
+    // Mobile menu & scroll effects
     function initMobileMenu() {
       const toggle = document.getElementById('mobileToggle');
       const menu = document.getElementById('navMenu');
-      
       if (toggle && menu) {
         toggle.addEventListener('click', () => {
           menu.classList.toggle('active');
@@ -2195,92 +2170,76 @@
           icon.classList.toggle('fa-bars');
           icon.classList.toggle('fa-times');
         });
-        
         menu.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', () => {
             menu.classList.remove('active');
-            toggle.querySelector('i').classList.remove('fa-times');
-            toggle.querySelector('i').classList.add('fa-bars');
+            if (toggle.querySelector('i')) {
+              toggle.querySelector('i').classList.remove('fa-times');
+              toggle.querySelector('i').classList.add('fa-bars');
+            }
           });
         });
       }
     }
 
-    // Scroll Effects
     function initScrollEffects() {
       const header = document.getElementById('header');
       const scrollBtn = document.getElementById('scrollTop');
-      
       window.addEventListener('scroll', () => {
         const scrolled = window.scrollY > 100;
-        
-        if (header) {
-          header.classList.toggle('scrolled', scrolled);
-        }
-        
-        if (scrollBtn) {
-          scrollBtn.classList.toggle('show', window.scrollY > 400);
-        }
-        
-        // Active nav link
-        const sections = document.querySelectorAll('section[id]');
+        if (header) header.classList.toggle('scrolled', scrolled);
+        if (scrollBtn) scrollBtn.classList.toggle('show', window.scrollY > 400);
         let current = '';
-        sections.forEach(section => {
-          if (window.scrollY >= section.offsetTop - 300) {
-            current = section.getAttribute('id');
-          }
+        document.querySelectorAll('section[id]').forEach(section => {
+          if (window.scrollY >= section.offsetTop - 300) current = section.getAttribute('id');
         });
-        
         document.querySelectorAll('.nav-menu a').forEach(link => {
           link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active');
-          }
+          if (link.getAttribute('href') === '#' + current) link.classList.add('active');
         });
       });
-      
-      if (scrollBtn) {
-        scrollBtn.addEventListener('click', () => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
+      if (scrollBtn) scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     }
 
-    // Page view tracking with session handling
     function initPageViewTracking() {
-      // Track initial page view
       gtag('event', 'page_view', {
         'page_title': document.title,
         'page_location': window.location.href,
         'page_path': window.location.pathname
       });
-
-      // Track via backend
-      var appUrl = 'https://script.google.com/macros/s/AKfycbxUKZBX-NcrBK4UsTrdSnNuwwjiEETpNk5UX7tgdtAzoFXo7BqV2gIIh5Ok29hwp-gV/exec';
-      fetch(appUrl + '?page=trackHome')
-        .then(response => response.json())
-        .then(data => console.log('Visit tracked'))
-        .catch(err => console.log('Tracking failed', err));
+      // Optional fetch tracking
+      fetch('https://script.google.com/macros/s/AKfycbxUKZBX-NcrBK4UsTrdSnNuwwjiEETpNk5UX7tgdtAzoFXo7BqV2gIIh5Ok29hwp-gV/exec?page=trackHome')
+        .catch(e => console.log);
     }
 
-    // Smooth scroll for anchor links
+    document.addEventListener('DOMContentLoaded', () => {
+      loadServices();
+      loadFAQ();
+      initScrollReveal();
+      initMobileMenu();
+      initScrollEffects();
+      initPageViewTracking();
+    });
+
+    // Smooth anchor scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const hash = this.getAttribute('href');
+        if (hash === '#') return;
+        const target = document.querySelector(hash);
         if (target) {
+          e.preventDefault();
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
     });
 
-    // Track outbound clicks
+    // Outbound link tracking
     document.querySelectorAll('a[href^="http"]').forEach(link => {
       link.addEventListener('click', function() {
-        const href = this.getAttribute('href');
         gtag('event', 'click', {
           'event_category': 'outbound',
-          'event_label': href,
+          'event_label': this.href,
           'transport_type': 'beacon'
         });
       });
