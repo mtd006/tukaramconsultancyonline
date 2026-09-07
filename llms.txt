@@ -1,0 +1,66 @@
+# Tukaram Consultancy Online
+
+> Tukaram Consultancy Online is a Navi Mumbai-based online legal consultancy providing 31 services across Society Support, Corporate Compliance, Consumer Court, NRI Legal Services, Family & Domestic Law, Insurance Claim Support and Embassy Legal Support. "Your Compliance Partner" with 10+ years' experience, 500+ clients served, monthly / annual subscriptions and one-off legal products. Mediated, drafted, filed online — India-wide.
+
+## Tukaram Consultancy Online
+- [Home — Services, Process, Credentials & Contact](https://mtd006.github.io/tukaramconsultancyonline/): Overview of Tukaram Consultancy, the 31-service catalogue, four-step process, multi-disciplinary credentials and contact details for Navi Mumbai.
+- [Online Portal — Register & Login](https://mtd006.github.io/tukaramconsultancyonline/portal.html): Tukaram Consultancy Online Portal — register, take a subscription or buy a specific legal product, then approach the consultancy online with your matter.
+
+## Services (code — name — category — suitable for)
+
+### Society Support
+- TC-LS-001 — Society Legal Representative — Society Support — Any Housing Society
+- TC-LS-003 — Housing Society Redevelopment Project — Society Support — Any Housing Society
+- TC-LS-004 — Onsite Visit (2 Hrs) Approved Client Only — OnSite Visit — All Client
+
+### Corporate Compliance
+- TC-LS-002 — Corporate Legal Consulting Service — Corporate Compliance — Any Organization
+
+### Consumer & Empowerment
+- TC-LS-CS-001 — Consumer Court Complaint Filing (Flipkart/Amazon/Builder) — Online Shoppers, Home Buyers
+- TC-LS-CS-002 — Salary & Employment Contract Review — Job Changers, Employees
+- TC-LS-CS-003 — NRI Legal Services (Property Dispute) — NRI Clients
+- TC-LS-CS-004 — Recovery of Money (Outstanding Dues) — Small Business Owners
+
+### Digital & Documentation
+- TC-LS-DD-001 — Will & Testament Registration Assistance — Senior Citizens, Asset holders
+- TC-LS-DD-002 — Succession / Legal Heir Certificate — Nominees of deceased
+
+### Family & Peace
+- TC-LS-FS-001 — Mental Harassment (Dowry) Pre-Litigation Advice — Families in distress
+
+### Specialized Services for NRI
+- TC-LS-NRI-01 — NRI Power of Attorney (POA) Registration & Execution (Remote) — NRIs granting authority to relatives in India
+- TC-LS-NRI-02 — NRI Rental Yield & Property Management Legal Shield — NRIs renting out vacant Indian property
+- TC-LS-NRI-03 — NRI Succession & Inheritance Planning (Cross-Border) — NRI
+- TC-LS-NRI-04 — Repatriation of Sale Proceeds (FEMA Compliance) — NRIs selling property in India
+
+### Silence & Discretion
+- TC-LS-VIP-01 — Strategic Exit & Settlement Negotiation ("Silent Resolve") — Business Partners, High-Profile Couples
+- TC-LS-VIP-02 — Private Client & Family Office Retainer — HNI Families
+- TC-LS-VIP-03 — Pre-Marital Asset Structuring & "Prenup" Advisory — NRI Individuals about to marry
+- TC-LS-VIP-04 — Art & Antiquities Succession Plan — HNI Art Collectors
+
+### Alimony & Financial Planning
+- TC-LS-WOM-01 — Alimony / Maintenance Calculation & Future Security Audit — Women seeking divorce
+- TC-LS-WOM-02 — Streedhan Recovery & Documentation — Women whose Streedhan is held by in-laws
+- TC-LS-WOM-03 — Protection from False 498A (Defense for Families) — Families of the Husband
+
+### Online Insurance Claim Support
+- TC-LS-UNQ-01 — Insurance Claim Rejection Appeal (Ombudsman Filing) — Policyholders with rejected claims
+- TC-LS-UNQ-02 — Mediclaim Cashless Authorization Facilitation — Patients in hospital
+- TC-LS-UNQ-03 — Term Insurance Nominee Assistance (Death Claim) — Bereaved Families
+
+### Embassies — Critical Need
+- TC-LS-EMB-01 — Employment Contract Drafting & HR Compliance Audit — Embassies
+- TC-LS-EMB-02 — Labour Dispute Resolution & Tribunal Representation — Embassies
+- TC-LS-EMB-03 — HR Policy Manual for Diplomatic Missions — Embassies
+- TC-LS-EMB-04 — 24/7 Emergency Retainer (Citizen Arrest Aid) — Embassies
+- TC-LS-EMB-05 — NRI Property Dispute Resolution (Citizen Services) — Embassies
+- TC-LS-EMB-06 — Customs Clearance for Diplomatic Cargo — Embassies
+
+## Contact
+- Address: F-103, Sec-11, Gurukutir CHS, Kalamboli, Navi Mumbai — 410218, Maharashtra, India
+- Phone / WhatsApp: +91 8976139932
+- Email: dhopatmanoj@gmail.com
+- Online Portal (Register & Login): https://script.google.com/macros/s/AKfycbxUKZBX-NcrBK4UsTrdSnNuwwjiEETpNk5UX7tgdtAzoFXo7BqV2gIIh5Ok29hwp-gV/exec
